@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const partners = [
   { name: "Intel", logo: "https://cdn.mos.cms.futurecdn.net/MKBZhC5Dz7u76BeTtkgW3a.jpg" },
   { name: "Access Bank", logo: "https://ghanatalksbusiness.com/wp-content/uploads/2019/06/access-bank-1.jpg" },
-  { name: "MTN", logo: "https://logos-world.net/wp-content/uploads/2023/01/MTN-Logo.jpg" },
+  { name: "MTN", logo: "https://cdn.worldvectorlogo.com/logos/mtn-3.svg" },
   { name: "Mastercard Foundation", logo: "https://mifos.org/wp-content/uploads/2021/08/mastercard-foundation-vector-logo-1.png" },
   { name: "Ministry of Education (Ghana)", logo: "https://pbs.twimg.com/profile_images/1928411971889590273/halbPXxm_400x400.jpg" },
   { name: "Durham University", logo: "https://wp.logos-download.com/wp-content/uploads/2020/06/Durham_University_Logo.png?dl" },
