@@ -159,7 +159,7 @@ export default function WhatWeBuild() {
 
             const borderColor = isSecond
               ? "bg-orange-500"
-              : "bg-gradient-to-r from-[#1F8A93] to-orange-300";
+              : "bg-gradient-to-r from-[#1F8A93] to-[#1F8A93]";
 
             const iconTextColor = isSecond
               ? "text-orange-300"
@@ -167,15 +167,15 @@ export default function WhatWeBuild() {
 
             const tagStyle = isSecond
               ? "text-orange-300 bg-orange-300/10"
-              : "text-white bg-gradient-to-r from-[#1F8A93]/80 to-orange-500/20";
+              : "text-white bg-gradient-to-r from-[#1F8A93]/80 to-[#1F8A93]";
 
             const titleColor = isSecond
               ? "text-orange-300"
-              : "text-transparent bg-clip-text bg-gradient-to-r from-[#1F8A93] to-orange-300";
+              : "text-transparent bg-clip-text bg-gradient-to-r from-[#1F8A93] to-[#1F8A93]";
 
             const iconBgGradient = isSecond
               ? "from-orange-300 to-white"
-              : "from-[#1F8A93]/50 via-orange-300 to-white";
+              : "from-[#1F8A93]/50 via-[#1F8A93] to-white";
 
             return (
               <motion.div

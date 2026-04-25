@@ -13,7 +13,7 @@ export default function Hero() {
         }}
       />
       {/* Gradient overlay: teal (primary) left → deep navy right, with orange (secondary) accent */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1F8A93]/90 via-foreground/70 to-[#F36F16]/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1F8A93]/60 via-foreground/70 to-[#F36F16]/40" />
       {/* Extra depth layer */}
       <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
 
@@ -55,7 +55,7 @@ export default function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="text-base px-8 py-6 bg-white hover:bg-secondary/90 text-secondary-foreground shadow-lg"
+                className="text-base px-8 py-6 bg-white hover:bg-[#1F8A93]/80 text-secondary-foreground shadow-lg"
               >
                 <a href="#contact">Partner with Us</a>
               </Button>
@@ -63,7 +63,7 @@ export default function Hero() {
                 asChild
                 size="lg"
                 // variant="outline"
-                className="text-base px-8 py-6 border-white/60 text-white hover:bg-white/15 bg-[#F36F16] backdrop-blur-sm"
+                className="text-base px-8 py-6 border-white/60 text-white hover:bg-white/15 bg-[#F36F16]/80 backdrop-blur-sm"
               >
                 <a href="#raise">Invest in the Build</a>
               </Button>

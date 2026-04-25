@@ -34,7 +34,7 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <Button asChild size="sm" className="bg-[#F36F16] text-white">
+          <Button asChild size="sm" className="bg-[#1F8A93] text-white">
             <a href="#raise">Invest in the Build</a>
           </Button>
         </div>
@@ -54,7 +54,7 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <Button asChild size="sm" className="mt-2 bg-[#F36F16]">
+          <Button asChild size="sm" className="mt-2 bg-[#1F8A93]">
             <a href="#raise">Invest in the Build</a>
           </Button>
         </div>
