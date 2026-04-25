@@ -64,11 +64,11 @@ export default function USPresence() {
                 ? "from-orange-300 to-white"
                 : "from-[#1F8A93] via-orange-300 to-white";
 
-              const tagStyle = isFirst
-                ? "text-[#1F8A93] bg-[#1F8A93]/10"
-                : isSecond
-                ? "text-orange-300 bg-orange-300/10"
-                : "text-white bg-gradient-to-r from-[#1F8A93]/20 to-orange-300/20";
+              // const tagStyle = isFirst
+              //   ? "text-[#1F8A93] bg-[#1F8A93]/10"
+              //   : isSecond
+              //   ? "text-orange-300 bg-orange-300/10"
+              //   : "text-white bg-gradient-to-r from-[#1F8A93]/20 to-orange-300/20";
 
               return (
                 <motion.div

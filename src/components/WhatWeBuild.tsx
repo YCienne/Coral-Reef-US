@@ -50,8 +50,18 @@ const products = [
 ];
 
 export default function WhatWeBuild() {
+  const aiLab = products[0]; // First product (AI Smart Labs)
+  const otherProducts = products.slice(1); // Remaining 2
+
+  const aiLabImages = [
+    "https://www.coralreefafrica.com/wp-content/uploads/2025/10/KAY_3515-scaled.jpg",
+    "https://www.coralreefafrica.com/wp-content/uploads/2025/10/Bl4-1.jpg",
+    "https://www.coralreefafrica.com/wp-content/uploads/2024/11/Untitled-design98765.png",
+    "https://www.coralreefafrica.com/wp-content/uploads/2024/11/DSC_0959-scaled.jpg",
+  ];
+
   return (
-    <section id="what-we-build" className="py-24 bg-[#1B2A32]/30 relative overflow-hidden">
+    <section id="what-we-build" className="py-24 bg-white relative overflow-hidden">
       
       {/* Decorative background */}
       <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[#1F8A93]/10 blur-3xl pointer-events-none" />
@@ -80,41 +90,90 @@ export default function WhatWeBuild() {
           </p>
         </motion.div>
 
-        {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {products.map((p, i) => {
-            
-            // 🎨 COLOR SYSTEM (no Tailwind dynamic issues)
-            const isFirst = i === 0;
-            const isSecond = i === 1;
+        {/* 🔥 FEATURE SECTION (AI SMART LABS) */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto mb-20"
+        >
+          <div className="grid md:grid-cols-2 gap-10 items-center">
 
-            const borderColor = isFirst
-              ? "bg-[#1F8A93]"
-              : isSecond
+            {/* LEFT CONTENT */}
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[#1F8A93]/10 text-[#1F8A93] inline-block mb-4">
+                {aiLab.tag}
+              </span>
+
+              <h3 className="text-2xl md:text-3xl font-extrabold text-[#1F8A93] mb-4">
+                {aiLab.name}
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed mb-6">
+                {aiLab.desc}
+              </p>
+
+              {/* STATS */}
+              <div className="grid grid-cols-2 gap-6">
+                {aiLab.stats.map((s) => (
+                  <div key={s.label}>
+                    <div className="text-2xl font-extrabold text-[#1F8A93]">
+                      {s.value}
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE GRID */}
+            <div className="grid grid-cols-2 gap-4">
+              {aiLabImages.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="overflow-hidden rounded-2xl"
+                >
+                  <img
+                    src={img}
+                    alt="AI Smart Lab"
+                    className="w-full h-full object-cover hover:scale-105 transition duration-500"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* 🧩 REMAINING CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {otherProducts.map((p, i) => {
+
+            const isSecond = i === 0;
+
+            const borderColor = isSecond
               ? "bg-orange-500"
-              : "bg-gradient-to-r from-[#1F8A93] to-orange-500";
+              : "bg-gradient-to-r from-[#1F8A93] to-orange-300";
 
-            const iconTextColor = isFirst
-              ? "text-[#1F8A93]"
-              : isSecond
-              ? "text-orange-500"
+            const iconTextColor = isSecond
+              ? "text-orange-300"
               : "text-white";
 
-            const tagStyle = isFirst
-              ? "text-[#1F8A93]/60 bg-[#1F8A93]/10"
-              : isSecond
-              ? "text-orange-500 bg-orange-500/10"
+            const tagStyle = isSecond
+              ? "text-orange-300 bg-orange-300/10"
               : "text-white bg-gradient-to-r from-[#1F8A93]/80 to-orange-500/20";
 
-            const titleColor = isFirst
-              ? "text-[#1F8A93]"
-              : isSecond
-              ? "text-orange-500"
-              : "text-transparent bg-clip-text bg-gradient-to-r from-[#1F8A93] to-orange-500";
+            const titleColor = isSecond
+              ? "text-orange-300"
+              : "text-transparent bg-clip-text bg-gradient-to-r from-[#1F8A93] to-orange-300";
 
-            const iconBgGradient = isFirst
-              ? "from-[#1F8A93]/60 to-white"
-              : isSecond
+            const iconBgGradient = isSecond
               ? "from-orange-300 to-white"
               : "from-[#1F8A93]/50 via-orange-300 to-white";
 
@@ -129,10 +188,8 @@ export default function WhatWeBuild() {
                 className="group relative bg-white rounded-3xl border border-white/10 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col"
               >
                 
-                {/* TOP BORDER */}
                 <div className={`absolute top-0 left-0 right-0 h-1 ${borderColor}`} />
 
-                {/* ICON AREA */}
                 <div className={`h-32 bg-gradient-to-br ${iconBgGradient} flex items-center justify-center`}>
                   <motion.div
                     whileHover={{ rotate: 8, scale: 1.1 }}
@@ -142,25 +199,19 @@ export default function WhatWeBuild() {
                   </motion.div>
                 </div>
 
-                {/* CONTENT */}
                 <div className="p-7 flex flex-col flex-1">
-                  
-                  {/* TAG */}
                   <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-3 ${tagStyle}`}>
                     {p.tag}
                   </span>
 
-                  {/* TITLE */}
                   <h3 className={`text-xl font-extrabold mb-3 ${titleColor}`}>
                     {p.name}
                   </h3>
 
-                  {/* DESCRIPTION */}
                   <p className="text-gray-600 text-sm leading-relaxed flex-1">
                     {p.desc}
                   </p>
 
-                  {/* STATS */}
                   <div className="grid grid-cols-2 gap-3 mt-6 pt-5 border-t border-gray-200">
                     {p.stats.map((s) => (
                       <div key={s.label} className="text-center">
@@ -173,12 +224,13 @@ export default function WhatWeBuild() {
                       </div>
                     ))}
                   </div>
-
                 </div>
+
               </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
