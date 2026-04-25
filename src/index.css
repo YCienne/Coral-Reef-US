@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+  /* BASE */
+  --background: 0 0% 100%;
+  --foreground: 200 30% 15%;
+
+  /* PRIMARY (Turquoise + White system) */
+  --primary: 185 65% 38%; /* turquoise */
+  --primary-foreground: 0 0% 100%;
+
+  --surface: 0 0% 100%;
+  --surface-alt: 185 20% 96%;
+
+  /* SECONDARY (Orange + Deep Blue) */
+  --secondary: 24 90% 55%; /* orange */
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 220 70% 20%; /* deep blue */
+  --accent-foreground: 0 0% 100%;
+
+  /* TEXT */
+  --muted: 185 20% 95%;
+  --muted-foreground: 185 15% 45%;
+
+  /* BORDERS */
+  --border: 185 20% 88%;
+  --ring: 185 65% 38%;
+
+  --radius: 0.6rem;
+}
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.page {
+  background: hsl(var(--background));
+}
+
+.section-alt {
+  background: hsl(var(--surface-alt));
+}
+
+.card {
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--border));
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
