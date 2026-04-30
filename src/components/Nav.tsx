@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Nav() {
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <a href="#" className="flex items-center">
           <img
-            src="https://images.fillout.com/orgid-630133/flowpublicid-default/widgetid-default/aaXCNEYK5Stez9XnTm5FKR/pasted-image-1776567686771.png"
+            src={logo}
             alt="Coral Reef USA"
             className="h-10 w-auto"
           />
